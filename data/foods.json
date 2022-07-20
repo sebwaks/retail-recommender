@@ -1,0 +1,48 @@
+[
+    {
+      "id": "popcorn",
+      "features": [
+        {
+          "type": "hot",
+          "meal": "snack",
+          "texture": "crunchy",
+          "flavor": "savory"
+            
+        }
+      ]
+    },
+    {
+        "id": "sliced cheese",
+        "features": [
+          {
+            "type": "cold",
+            "meal": "snack",
+            "texture": "soft",
+            "flavor": "savory"
+              
+          }
+        ]
+      },
+    {
+      "id": "cocoa drinks",
+      "features": [
+        {
+          "type": "hot",
+          "meal": "drink",
+          "texture": "soft",
+          "flavor": "sweet"
+        }
+      ]
+    },
+    {
+      "id": "ice cream",
+      "features": [
+        {
+            "type": "cold",
+            "meal": "dessert",
+            "texture": "soft",
+            "flavor": "sweet"
+        }
+      ]
+    }
+  ]

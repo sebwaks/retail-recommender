@@ -1,0 +1,1107 @@
+{
+	"name": "Dynamics Recommendations Service",
+	"version": "1.0",
+	"culture": "en-US",
+	"annotations": [
+		{
+			"name": "DRSDataContractsVersion",
+			"value": "1.4"
+		}
+	],
+	"entities": [
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ItemsAndVariants",
+			"description": "Items and item variants",
+			"attributes": [
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "Title",
+					"description": "The title",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "Description",
+					"description": "The description",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "ReleaseDate",
+					"description": "The release date in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "1970-01-01T00:00:00.000Z"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ItemCategories",
+			"description": "Item categories",
+			"attributes": [
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"description": "The item category",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ItemAndVariantImages",
+			"description": "Item and item variant images",
+			"attributes": [
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "ImageFullUrl",
+					"description": "The image full (absolute) URL",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "IsPrimaryImage",
+					"description": "Specifies whether the image is the primary image",
+					"dataType": "boolean",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ItemAndVariantDocuments",
+			"description": "Item and item variant documents",
+			"attributes": [
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "DocumentFullUrl",
+					"description": "The document full (absolute) URL",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "DocumentType",
+					"description": "The document type. Supported type is currently only txt",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ItemAndVariantFilters",
+			"description": "Item and item variant filters",
+			"attributes": [
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "FilterName",
+					"description": "The filter name",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "FilterValue",
+					"description": "The filter value",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "FilterType",
+					"description": "The filter type. Possible values are: Textual, Numeric and DateTime. Supports only Textual for now",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ItemAndVariantAvailabilities",
+			"description": "Item and item variant availabilities",
+			"attributes": [
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "StartDate",
+					"description": "Availability start date in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0001-01-01T00:00:00.000Z"
+						}
+					]
+				},
+				{
+					"name": "EndDate",
+					"description": "Availability end date in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "9999-12-31T23:59:59.999Z"
+						}
+					]
+				},
+				{
+					"name": "Price",
+					"description": "Item or item variant price",
+					"dataType": "double",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "Channel",
+					"description": "The channel",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0"
+						}
+					]
+				},
+				{
+					"name": "Catalog",
+					"description": "The catalog",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_Interactions",
+			"description": "User interactions with items and item variants",
+			"attributes": [
+				{
+					"name": "InteractionGroupingId",
+					"description": "The interaction grouping unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "UserId",
+					"description": "The user unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "InteractionType",
+					"description": "The interaction type. Possible values are: Transaction, View, Like and Rating. Supports only Transaction for now",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "Transaction"
+						}
+					]
+				},
+				{
+					"name": "Timestamp",
+					"description": "The interaction timestamp in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "1970-01-01T00:00:00.000Z"
+						}
+					]
+				},
+				{
+					"name": "RealtimeEventId",
+					"description": "The realtime event unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "PaidPrice",
+					"description": "The interaction paid price",
+					"dataType": "double",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "Channel",
+					"description": "The channel",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0"
+						}
+					]
+				},
+				{
+					"name": "Catalog",
+					"description": "The catalog",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0"
+						}
+					]
+				},
+				{
+					"name": "Strength",
+					"description": "The interaction strength (non-negative)",
+					"dataType": "double",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "1"
+						}
+					]
+				},
+				{
+					"name": "IsPositive",
+					"description": "Specifies whether the interaction is a positive interaction",
+					"dataType": "boolean",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_SyntheticInteractions",
+			"description": "Synthetically generated user interactions with items and item variants",
+			"attributes": [
+				{
+					"name": "InteractionGroupingId",
+					"description": "The interaction grouping unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "UserId",
+					"description": "The user unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "InteractionType",
+					"description": "The interaction type. Possible values are: Transaction, View, Like and Rating. Supports only Transaction for now",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "Transaction"
+						}
+					]
+				},
+				{
+					"name": "Timestamp",
+					"description": "The interaction timestamp in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "1970-01-01T00:00:00.000Z"
+						}
+					]
+				},
+				{
+					"name": "RealtimeEventId",
+					"description": "The realtime event unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "PaidPrice",
+					"description": "The interaction paid price",
+					"dataType": "double",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "Channel",
+					"description": "The channel",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0"
+						}
+					]
+				},
+				{
+					"name": "Catalog",
+					"description": "The catalog",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0"
+						}
+					]
+				},
+				{
+					"name": "Strength",
+					"description": "The interaction strength (non-negative)",
+					"dataType": "double",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "1"
+						}
+					]
+				},
+				{
+					"name": "IsPositive",
+					"description": "Specifies whether the interaction is a positive interaction",
+					"dataType": "boolean",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_Config",
+			"description": "Reco configuration",
+			"attributes": [
+				{
+					"name": "Key",
+					"description": "The configuration key",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "Value",
+					"description": "The configuration value",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_OptOutUsers",
+			"description": "Users who opted out from personalization",
+			"attributes": [
+				{
+					"name": "UserId",
+					"description": "The user unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "LastModifiedDate",
+					"description": "The date when the user last opted out in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_SeededRecommendationsEnrichment",
+			"description": "Enrichment of seeded recommendation results",
+			"attributes": [
+				{
+					"name": "RecoListName",
+					"description": "The recommendation list name",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "AlgoType",
+					"description": "The algo type for the recommendation list to enrich",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "SeedItemId",
+					"description": "The recommendation seed item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "SeedItemVariantId",
+					"description": "The recommendation seed item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "EnrichmentAction",
+					"description": "The enrichment action. Supported actions are: Include or Exclude",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "Rank",
+					"description": "The rank of the enrichment 'Include' action. This value is irrelevant in case of 'Exclude' enrichment action",
+					"dataType": "int64",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_RecommendationsEnrichment",
+			"description": "Enrichment of recommendation results",
+			"attributes": [
+				{
+					"name": "RecoListName",
+					"description": "The recommendation list name",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "EnrichmentAction",
+					"description": "The enrichment action. Supported actions are: Include or Exclude",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "Rank",
+					"description": "The rank of the enrichment 'Include' action. This value is irrelevant in case of 'Exclude' enrichment action",
+					"dataType": "int64",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ExternalRecommendationsLists",
+			"description": "External lists of recommendations",
+			"attributes": [
+				{
+					"name": "ListName",
+					"description": "The list name",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "Title",
+					"description": "The list title",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ListAvailabilityStartDate",
+					"description": "The list availability start date in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "0001-01-01T00:00:00.000Z"
+						}
+					]
+				},
+				{
+					"name": "ListAvailabilityEndDate",
+					"description": "The list availability end date in UTC standard",
+					"dataType": "dateTime",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "9999-12-31T23:59:59.999Z"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ExternalRecommendationsItems",
+			"description": "Items for the external lists of recommendations",
+			"attributes": [
+				{
+					"name": "ListName",
+					"description": "The list name",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "Rank",
+					"description": "The item rank in the external list",
+					"dataType": "int64",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ImagesInventory",
+			"description": "Images Inventory",
+			"attributes": [
+				{
+					"name": "ImageId",
+					"description": "The image unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ImageFullUrl",
+					"description": "The image full (absolute) URL",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				},
+				{
+					"name": "ImageType",
+					"description": "The image type. Supported type is: Composite",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						},
+						{
+							"name": "DefaultValue",
+							"value": "Composite"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "LocalEntity",
+			"name": "Reco_ImageToItemMappings",
+			"description": "Image to item mappings",
+			"attributes": [
+				{
+					"name": "ImageId",
+					"description": "The image unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemId",
+					"description": "The item unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "True"
+						}
+					]
+				},
+				{
+					"name": "ItemVariantId",
+					"description": "The item variant unique identifier",
+					"dataType": "string",
+					"annotations": [
+						{
+							"name": "IsMandatory",
+							"value": "False"
+						}
+					]
+				}
+			]
+		}
+	]
+}

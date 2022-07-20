@@ -1,0 +1,70 @@
+{
+  "Alice": {
+    "Sunny": {
+      "Plain": "ice cream",
+      "Salty": "sliced cheese",
+      "Sweet": "ice cream"
+    },
+    "Rainy": {
+      "Plain": "popcorn",
+      "Salty": "cocoa drinks",
+      "Sweet": "popcorn"
+    },
+    "Snowy": {
+      "Plain": "cocoa drinks",
+      "Salty": "cocoa drinks",
+      "Sweet": "cocoa drinks"
+    }
+  },
+  "Bob": {
+    "Sunny": {
+      "Plain": "cocoa drinks",
+      "Salty": "sliced cheese",
+      "Sweet": "ice cream"
+    },
+    "Rainy": {
+      "Plain": "popcorn",
+      "Salty": "popcorn",
+      "Sweet": "popcorn"
+    },
+    "Snowy": {
+      "Plain": "sliced cheese",
+      "Salty": "sliced cheese",
+      "Sweet": "sliced cheese"
+    }
+  },
+  "Cathy": {
+    "Sunny": {
+      "Plain": "popcorn",
+      "Salty": "ice cream",
+      "Sweet": "cocoa drinks"
+    },
+    "Rainy": {
+      "Plain": "cocoa drinks",
+      "Salty": "popcorn",
+      "Sweet": "sliced cheese"
+    },
+    "Snowy": {
+      "Plain": "ice cream",
+      "Salty": "sliced cheese",
+      "Sweet": "cocoa drinks"
+    }
+  },
+  "Dave": {
+    "Sunny": {
+      "Plain": "sliced cheese",
+      "Salty": "sliced cheese",
+      "Sweet": "sliced cheese"
+    },
+    "Rainy": {
+      "Plain": "popcorn",
+      "Salty": "popcorn",
+      "Sweet": "popcorn"
+    },
+    "Snowy": {
+      "Plain": "cocoa drinks",
+      "Salty": "cocoa drinks",
+      "Sweet": "cocoa drinks"
+    }
+  }
+}
